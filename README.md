@@ -33,12 +33,6 @@ This is a **practice project** built to strengthen frontend development skills a
 
 ---
 
-## 📸 Preview
-
-(Add screenshots here later)
-
----
-
 ## ⚙️ How It Works
 
 * Fetches weather data using OpenWeather API
@@ -62,6 +56,33 @@ weather-app/
 
 ---
 
+## 🎥 Video Assets
+
+Background videos used in this project are not included in the repository to keep it lightweight and optimized.
+
+You can download similar free videos from:
+
+* https://www.pexels.com/videos/
+* https://pixabay.com/videos/
+* https://coverr.co/
+
+Suggested search keywords:
+
+* "sunny sky timelapse"
+* "rain falling slow motion"
+* "snow falling"
+* "cloud moving sky"
+
+After downloading, place videos inside a `videos/` folder:
+
+weather-app/
+│── videos/
+│   ├── sunny.mp4
+│   ├── rain.mp4
+│   ├── snow.mp4
+│   ├── cloudy.mp4
+
+
 ## ⚡ Setup Instructions
 
 1. Clone the repository
@@ -75,14 +96,3 @@ weather-app/
 * OpenWeather API → https://openweathermap.org/api
 
 ---
-
-## 💡 Future Improvements
-
-* 5-day weather forecast
-* Search suggestions
-* Better animations & transitions
-* PWA support (installable app)
-
-
-
-⭐ If you like this project, feel free to star it!
