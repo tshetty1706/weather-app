@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 🎥 Background Video */
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Dark overlay for readability */
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
+}
+
+/* App UI */
+.weather-app {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.1);
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.search-box button {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.weather-info h2 {
+  font-size: 3rem;
+}
+#time {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.weather-info img {
+  margin: 10px 0;
+}
+
+/* Extra info grid */
+.extra-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.extra-info div {
+  background: rgba(255,255,255,0.15);
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+}
+
+.extra-info span {
+  font-weight: bold;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Loader */
+#loader {
+  margin-top: 15px;
+}
+
+.hidden {
+  display: none;
+}
+  </style>
+</head>
+<body>
+
+  <!-- 🎥 Background Video -->
+  <video autoplay muted loop id="bgVideo">
+    <source src="videos/sunny.mp4" type="video/mp4">
+  </video>
+
+  <!-- <div class="overlay"></div> -->
+
+  <div class="weather-app">
+
+    <!-- 🔍 Search -->
+    <div class="search-box">
+      <input type="text" id="search" placeholder="Enter city..." />
+      <button onclick="checkCity()">Search</button>
+    </div>
+
+    <!-- 🕒 Time -->
+    <p id="time"></p>
+
+    <!-- 🌤 Main Info -->
+    <div class="weather-info">
+      <h1 id="city">Mumbai</h1>
+      <img id="icon" src="" alt="icon" width="90" />
+      <h2 id="temp">28°C</h2>
+      <p id="condition">Sunny</p>
+    </div>
+
+    <!-- 📊 Extra Info -->
+    <div class="extra-info">
+      <div>
+        <p>🌡 Feels</p>
+        <span id="feels">30°C</span>
+      </div>
+      <div>
+        <p>💧 Humidity</p>
+        <span id="humidity">70%</span>
+      </div>
+      <div>
+        <p>🌬 Wind</p>
+        <span id="wind">10 km/h</span>
+      </div>
+      <div>
+        <p>🔽 Pressure</p>
+        <span id="pressure">1012 hPa</span>
+      </div>
+  </div>
+
+    <!-- ⏳ Loader -->
+    <div id="loader" class="hidden">Loading...</div>
+
+  </div>
+
+  <script src="weather.js"></script>
+</body>
+</html>
