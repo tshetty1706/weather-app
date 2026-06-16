@@ -4,7 +4,7 @@ A responsive weather web application built using **HTML, CSS, and JavaScript**.
 This project displays real-time weather data with dynamic UI updates and background videos based on weather conditions.
 
 ---
----
+--- 
 
 ## 🙌 Note
 
